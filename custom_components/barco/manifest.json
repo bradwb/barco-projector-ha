@@ -1,12 +1,12 @@
 {
+  "domain": "barco",
+  "name": "Barco",
   "codeowners": ["@bradwb"],
   "config_flow": false,
   "dependencies": [],
   "documentation": "https://github.com/bradwb/barco-projector-ha",
-  "issue_tracker": "https://github.com/bradwb/barco-projector-ha/issues",
-  "domain": "barco",
-  "name": "Barco",
-  "requirements": [],
   "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/bradwb/barco-projector-ha/issues",
+  "requirements": [],
   "version": "0.0.1"
 }
