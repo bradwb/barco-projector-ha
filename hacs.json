@@ -1,0 +1,5 @@
+{
+  "name": "Barco Projector Integration",
+  "type": "integration",
+  "homeassistant": "2023.1.0"
+}
