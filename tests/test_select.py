@@ -40,11 +40,11 @@ class TestBarcoSelects(unittest.TestCase):
         self.assertEqual(select.name, "Test Projector Cropping Mode")
         self.assertTrue(select.available)
         self.assertEqual(select.icon, "mdi:crop")
-        self.assertEqual(select.options, ["Disabled", "Auto", "2.35:1", "Manual"])
+        self.assertEqual(select.options, ["Disabled", "16:9", "1.85:1", "2.35:1", "2.37:1", "2.40:1", "Auto", "Manual"])
 
     def test_crop_select_update(self):
         select = BarcoCropSelect(self.mock_hub, "Test Projector")
-        self.mock_hub.send_command.return_value = b"000002"
+        self.mock_hub.send_command.return_value = b"000003"
         
         select.update()
         self.mock_hub.send_command.assert_called_with(b":CTYP?\r")
@@ -53,5 +53,5 @@ class TestBarcoSelects(unittest.TestCase):
     def test_crop_select_option(self):
         select = BarcoCropSelect(self.mock_hub, "Test Projector")
         select.select_option("Manual")
-        self.mock_hub.send_command.assert_called_with(b":CTYP 3\r")
+        self.mock_hub.send_command.assert_called_with(b":CTYP 7\r")
         self.assertEqual(select.current_option, "Manual")

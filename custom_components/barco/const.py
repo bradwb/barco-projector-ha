@@ -31,9 +31,13 @@ POWER_STATES: Final = {
 # Cropping mode mappings
 CROP_MODES: Final = {
     "Disabled": 0,
-    "Auto": 1,
-    "2.35:1": 2,
-    "Manual": 3,
+    "16:9": 1,
+    "1.85:1": 2,
+    "2.35:1": 3,
+    "2.37:1": 4,
+    "2.40:1": 5,
+    "Auto": 6,
+    "Manual": 7,
 }
 CROP_MODES_INV: Final = {v: k for k, v in CROP_MODES.items()}
 
