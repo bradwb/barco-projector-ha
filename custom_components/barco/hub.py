@@ -54,11 +54,11 @@ class BarcoHub:
                 response = self._socket.recv(1024).rstrip()
                 _LOGGER.debug("Sent: %s, Received: %s", command, response)
                 
-                parts = response.split(b" ")
+                parts = response.split()
                 if len(parts) >= 3:
                     val = parts[2]
                     if val.startswith(b"!"):
-                        if val == b"!00002":
+                        if val.startswith(b"!00002"):
                             _LOGGER.debug("Command %s not available in current state (error !00002)", command.decode())
                         else:
                             _LOGGER.warning("Projector returned error %s for command %s", val.decode(), command.decode())
